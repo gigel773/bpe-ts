@@ -24,7 +24,7 @@ bpe_state = bpe_tokenizer.bpe_state.BpeState(epoch=args.epoch)
 
 for (root, _, files) in os.walk(args.data_set):
     for file in files:
-        with open(os.path.join(root, file), 'r') as data:
+        with open(os.path.join(root, file), 'r', encoding='utf-8') as data:
             source = data.read()
 
         bpe_state.update(source)
