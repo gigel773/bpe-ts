@@ -9,8 +9,8 @@ DEFAULT_MIN_WORD_COUNT = -1
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-d', '--data-set', help='Path to data-set', required=True)
-parser.add_argument('-o', '--output-path', help='Where to save a model', required=True)
-parser.add_argument('-n', '--name', help='Name of saved model', required=True)
+parser.add_argument('-o', '--output-path', help='Where to save a table', required=True)
+parser.add_argument('-n', '--name', help='Name of saved table', required=True)
 parser.add_argument('-e', '--epoch', help='Number of merging iterations', type=int, default=50)
 parser.add_argument('-w', '--word-count',
                     help='Stop when this number of words is completed',
