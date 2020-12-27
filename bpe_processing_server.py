@@ -4,10 +4,12 @@ from argparse import ArgumentParser
 from flask import Flask, jsonify
 from flask import make_response
 from flask import request
+from flask import render_template
 
 from bpe_tokenizer.bpe_state import BpeState
 from bpe_tokenizer.util import load_from_file
 
+#app = Flask(__name__, static_url_path='')
 app = Flask(__name__)
 state = BpeState()
 
@@ -24,6 +26,9 @@ def handle_input_text():
 
     return make_response(jsonify(response), 200)
 
+@app.route('/')
+def root():
+    return render_template("index.html")
 
 if '__main__' == __name__:
     parser = ArgumentParser()
